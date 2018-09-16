@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TP_17_09</string>
+    <string name="backTitle"><![CDATA[< Back Title]]></string>
+    <string name="mainTitle">Main Title</string>
+    <string name="propos">A propos du film</string>
+    <string name="movieTitle">Titre</string>
+    <string name="movieTitleValue">Gods of Egypt</string>
+    <string name="movieOriginal">Titre d\'origine</string>
+    <string name="movieOriginalValue">Gods of Egypt</string>
+    <string name="movieDescription">Description</string>
+    <string name="movieDescriptionValue">Dans une époque ancestrale, durant laquelle les Dieux vivaient parmi les hommes, la paix règne en l\'Egypte. Seth, Dieu du désert, qui convoite le pouvoir, assassine le roi et condamne Horus à l\'exil, plongeant le royaume d\'Egypte dans le chaos. C\'est l\'intervention d\'un jeune voleur, Bek, qui va sortir Horus de sa prison. Ensemble, ils se lancent dans une aventure épique qui va donner lieu à une guerre sans précédent.</string>
+    <string name="movieKeywords">Mots-clés</string>
+    <string name="movieKeywordsValue">Accident industriel</string>
+</resources>
