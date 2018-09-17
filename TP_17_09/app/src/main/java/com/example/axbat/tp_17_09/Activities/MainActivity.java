@@ -1,24 +1,23 @@
-package com.example.axbat.tp_17_09;
+package com.example.axbat.tp_17_09.Activities;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.axbat.tp_17_09.R;
 
 public class MainActivity extends Activity {
 
@@ -29,6 +28,7 @@ public class MainActivity extends Activity {
     private EditText editComment;
     private TextView textComment;
     private ImageButton textbtn;
+    private Button catbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +91,16 @@ public class MainActivity extends Activity {
                     alert.setMessage(editComment.getText());
                     alert.show();
                 }
+            }
+        });
+
+        this.catbtn=findViewById(R.id.catbtn);
+
+        this.catbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
+                startActivity(intent);
             }
         });
 

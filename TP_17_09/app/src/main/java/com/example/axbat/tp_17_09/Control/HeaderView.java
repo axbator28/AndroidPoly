@@ -1,4 +1,4 @@
-package com.example.axbat.tp_17_09;
+package com.example.axbat.tp_17_09.Control;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.axbat.tp_17_09.R;
 
 public class HeaderView extends LinearLayout {
 
