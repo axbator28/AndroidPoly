@@ -254,6 +254,7 @@
                         android:layout_margin="12dp"
                         android:textSize="10dp"/>
                     <Button
+                        android:id="@+id/listbtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Liste de films"

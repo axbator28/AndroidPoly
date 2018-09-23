@@ -11,4 +11,6 @@
     <string name="movieDescriptionValue">Dans une époque ancestrale, durant laquelle les Dieux vivaient parmi les hommes, la paix règne en l\'Egypte. Seth, Dieu du désert, qui convoite le pouvoir, assassine le roi et condamne Horus à l\'exil, plongeant le royaume d\'Egypte dans le chaos. C\'est l\'intervention d\'un jeune voleur, Bek, qui va sortir Horus de sa prison. Ensemble, ils se lancent dans une aventure épique qui va donner lieu à une guerre sans précédent.</string>
     <string name="movieKeywords">Mots-clés</string>
     <string name="movieKeywordsValue">Accident industriel</string>
+    <string name="comment_base_user">Je suis l\'username</string>
+    <string name="comment_base_text">Je suis le corps du commentaire, ce qui est un peu plus long, mais malgré tout, j\'apprécie ma longueur qui me rappelle celle de la piste cyclable en bas de chez moi oulala je test en devanant encore plus grand</string>
 </resources>

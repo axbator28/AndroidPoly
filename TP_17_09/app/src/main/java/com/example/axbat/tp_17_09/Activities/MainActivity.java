@@ -36,6 +36,7 @@ public class MainActivity extends Activity {
     private Button btnComment;
     private ImageButton textbtn;
     private Button catbtn;
+    private Button listbtn;
 
     private RecyclerView mRecyclerView;
     private List<Commentaire> mComments;
@@ -99,6 +100,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        this.listbtn=findViewById(R.id.listbtn);
+        this.listbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListeActivity.class);
                 startActivity(intent);
             }
         });
