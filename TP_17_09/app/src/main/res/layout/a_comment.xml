@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:background="@color/Black">
+
+        <ImageView
+            android:id="@+id/com_image"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:src="@drawable/ic_send"
+            android:tint="@color/White"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="7" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/com_username"
+                android:layout_weight="1"
+                android:text="Je suis l'username"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/com_text"
+                android:layout_weight="2"
+                android:gravity="start|top"
+                android:textStyle="bold"
+                android:text="Je suis le corps du commentaire, ce qui est un peu plus long, mais malgré tout, j'apprécie ma longueur qui me rappelle celle de la piste cyclable en bas de chez moi oulala je test en devanant encore plus grand"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -10,7 +10,13 @@ import com.example.axbat.tp_17_09.ViewHolders.CategoryViewHolder;
 import com.example.axbat.tp_17_09.R;
 import com.example.axbat.tp_17_09.model.Category;
 
+
+import java.util.Arrays;
+import java.util.List;
+
 public class CategoryAdapter extends RecyclerView.Adapter {
+
+    private List<Category> mCategories = Arrays.asList(Category.values());
 
     @NonNull
     @Override
@@ -22,7 +28,7 @@ public class CategoryAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int i) {
-        Category currentCat = Category.values()[i];
+        Category currentCat = mCategories.get(i);
         if(holder instanceof CategoryViewHolder && currentCat != null){
             CategoryViewHolder viewholder = (CategoryViewHolder) holder;
             viewholder.layoutForCategory(currentCat);
@@ -32,6 +38,6 @@ public class CategoryAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return Category.values().length;
+        return mCategories.size();
     }
 }

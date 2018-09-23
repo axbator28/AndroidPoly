@@ -202,6 +202,7 @@
                         android:layout_margin="12dp"
                         android:textSize="10dp"/>
                     <Button
+                        android:id="@+id/combtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Commenter"
@@ -226,15 +227,10 @@
                         android:textSize="10dp"/>
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textcomments"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_com"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@color/Grey"
-                    android:text="Liste des commentaires"
-                    android:textColor="@color/White"
-                    android:textStyle="bold"
-                    android:gravity="center"/>
+                    android:layout_height="wrap_content" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
