@@ -227,10 +227,16 @@
                         android:textSize="10dp"/>
                 </LinearLayout>
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recycler_com"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_com"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"/>
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"

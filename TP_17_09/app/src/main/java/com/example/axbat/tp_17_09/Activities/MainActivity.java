@@ -23,6 +23,7 @@ import com.example.axbat.tp_17_09.Adapters.CommentAdapter;
 import com.example.axbat.tp_17_09.R;
 import com.example.axbat.tp_17_09.model.Commentaire;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -91,15 +92,7 @@ public class MainActivity extends Activity {
                 editComment.requestFocus();
             }
         });
-        this.textbtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                if(!editComment.getText().toString().matches("")){
-                    AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-                    alert.setMessage(editComment.getText());
-                    alert.show();
-                }
-            }
-        });
+
         this.catbtn=findViewById(R.id.catbtn);
 
         this.catbtn.setOnClickListener(new View.OnClickListener() {
@@ -112,16 +105,32 @@ public class MainActivity extends Activity {
 
         //TP2
         this.mRecyclerView=findViewById(R.id.recycler_com);
+        mComments = new ArrayList<Commentaire>();
         mComments.add(new Commentaire("pika1", R.drawable.tp_pika1, "Oulala, ce film il est pô bien"));
         mComments.add(new Commentaire("Panoramix", R.drawable.tp_pika2, "C'est une bonne situation, ça, scribe ?"));
         mComments.add(new Commentaire("Otis", R.drawable.tp_pika3, "Mais, vous savez, moi je ne crois pas qu'il y ait de bonne ou de mauvaise situation. " +
                 "Moi, si je devais résumer ma vie aujourd'hui avec vous, je dirais que c'est d'abord des rencontres, Des gens qui m'ont tendu la main, peut-être à un moment où " +
                 "je ne pouvais pas, où j'étais seul chez moi."));
+        mComments.add(new Commentaire("Otis", R.drawable.tp_pika3, "J'en profite pour rajouter un commentaire de taille, lui aussi, plutôt imposante, pour tester la disparition" +
+                "du double scroll, car tout de même, nous sommes champions du monde de football et nous ne pouvons, à ce titre, pas tolérer la présence d'un double scroll," +
+                "NAN MAIS OH"));
         CommentAdapter cAdapter = new CommentAdapter();
         cAdapter.setmComments(mComments);
-        this.mRecyclerView.setAdapter(new CommentAdapter());
+        this.mRecyclerView.setAdapter(cAdapter);
         this.mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        this.textbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                if(!editComment.getText().toString().matches("")){
+                    Commentaire comi = new Commentaire("Toi le user", R.drawable.tp_pika1, editComment.getText().toString());
+                    mComments.add(comi);
+                    CommentAdapter adapt = (CommentAdapter) mRecyclerView.getAdapter();
+                    adapt.notifyDataSetChanged();
+                    editComment.setText("");
+                    likeButton.requestFocus();
+                }
+            }
+        });
 
 
     }
