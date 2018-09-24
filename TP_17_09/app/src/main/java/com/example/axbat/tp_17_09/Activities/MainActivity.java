@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.axbat.tp_17_09.Adapters.CommentAdapter;
@@ -37,6 +38,11 @@ public class MainActivity extends Activity {
     private ImageButton textbtn;
     private Button catbtn;
     private Button listbtn;
+
+    private ImageView image;
+    private TextView titre;
+    private TextView desc;
+    private TextView orititre;
 
     private RecyclerView mRecyclerView;
     private List<Commentaire> mComments;
@@ -141,6 +147,27 @@ public class MainActivity extends Activity {
                 }
             }
         });
+
+        //TP3
+
+        this.image=findViewById(R.id.movie_image);
+        this.titre=findViewById(R.id.movie_title);
+        this.desc=findViewById(R.id.movie_desc);
+        this.orititre=findViewById(R.id.movie_orititle);
+
+        if(getIntent()!=null && getIntent().getExtras()!=null){
+            Bundle bundle = getIntent().getExtras();
+            if(!bundle.getString("TITRE").equals(null)){
+                this.titre.setText(bundle.getString("TITRE"));
+                this.orititre.setText(bundle.getString("TITRE"));
+            }
+            if(!bundle.getString("DESC").equals(null)){
+                this.desc.setText(bundle.getString("DESC"));
+            }
+            if(!bundle.get("IMAGE").equals(null)){
+                this.image.setImageResource(bundle.getInt("IMAGE"));
+            }
+        }
 
 
     }

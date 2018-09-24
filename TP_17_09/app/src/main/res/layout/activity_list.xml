@@ -13,6 +13,26 @@
         app:mainTitle="Liste films">
     </com.example.axbat.tp_17_09.Control.HeaderView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/Black">
+
+        <Button
+            android:id="@+id/to_cate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Categories de films"
+            android:textColor="@color/White"
+            android:layout_weight="1"
+            android:background="@drawable/btn_yellow"
+            android:drawableLeft="@drawable/ic_send"
+            android:drawableTint="@color/White"
+            android:layout_margin="12dp"
+            android:textSize="10dp"/>
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,5 +42,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </ScrollView>
+
 
 </LinearLayout>
