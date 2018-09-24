@@ -16,6 +16,7 @@ import com.example.axbat.tp_17_09.Adapters.ListeAdapter;
 import com.example.axbat.tp_17_09.R;
 import com.example.axbat.tp_17_09.model.Category;
 import com.example.axbat.tp_17_09.model.FilmItem;
+import com.example.axbat.tp_17_09.model.MovieManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,15 +51,8 @@ public class ListeActivity extends Activity{
         });
 
         mFilmItems = new ArrayList<>();
-        mFilmItems.add(new FilmItem("Bonjour 3", "Bienvenue, on a sauté le 2", R.drawable.tp_goe, "B", 0, 0));
-        mFilmItems.add(new FilmItem("Allo1", "Le maître chef sur un anno", R.drawable.tp_movie2, "A", 0, 0));
-        mFilmItems.add(new FilmItem("Dumb and dumberer 2", "Pas malins", R.drawable.tp_goe, "D", 0, 0));
-        mFilmItems.add(new FilmItem("Allo2", "Le maître chef sur terre et un anno après", R.drawable.tp_movie2, "A", 0, 0));
-        mFilmItems.add(new FilmItem("Allo3", "Le maître chef sur un anno puis perdu dans l'espace", R.drawable.tp_movie2, "A", 0, 0));
-        mFilmItems.add(new FilmItem("Allo4", "Le maître chef se retrouve son chemin", R.drawable.tp_movie2, "A", 0, 0));
-        mFilmItems.add(new FilmItem("Bonjour", "Bienvenue", R.drawable.tp_goe, "B", 0, 0));
-        mFilmItems.add(new FilmItem("Dumb and dumberer", "Pas malins", R.drawable.tp_goe, "D", 0, 0));
-        sortList();
+
+        mFilmItems = MovieManager.getInstance().getSortedMovieList();
 
 
         this.mRecyclerView=findViewById(R.id.recycler_list);

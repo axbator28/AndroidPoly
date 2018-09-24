@@ -6,7 +6,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.os.Bundle;
@@ -36,13 +39,15 @@ public class MainActivity extends Activity {
     private EditText editComment;
     private Button btnComment;
     private ImageButton textbtn;
-    private Button catbtn;
-    private Button listbtn;
+
 
     private ImageView image;
     private TextView titre;
     private TextView desc;
     private TextView orititre;
+    private Integer imageId;
+
+    private Button share;
 
     private RecyclerView mRecyclerView;
     private List<Commentaire> mComments;
@@ -100,24 +105,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        this.catbtn=findViewById(R.id.catbtn);
 
-        this.catbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        this.listbtn=findViewById(R.id.listbtn);
-        this.listbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListeActivity.class);
-                startActivity(intent);
-            }
-        });
 
         //TP2
         this.mRecyclerView=findViewById(R.id.recycler_com);
@@ -154,6 +142,7 @@ public class MainActivity extends Activity {
         this.titre=findViewById(R.id.movie_title);
         this.desc=findViewById(R.id.movie_desc);
         this.orititre=findViewById(R.id.movie_orititle);
+        this.imageId=0;
 
         if(getIntent()!=null && getIntent().getExtras()!=null){
             Bundle bundle = getIntent().getExtras();
@@ -166,8 +155,27 @@ public class MainActivity extends Activity {
             }
             if(!bundle.get("IMAGE").equals(null)){
                 this.image.setImageResource(bundle.getInt("IMAGE"));
+                this.imageId=bundle.getInt("IMAGE");
             }
         }
+
+        this.share=findViewById(R.id.sharebtn);
+        this.share.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                String shareText = titre.getText().toString();
+                //en dur, mais on le ferait de manière jolie normalement, avec le nom du fichier en paramètre
+                //marche dans mes notes
+                Uri imageUri = Uri.parse("android.resource://" + getPackageName()
+                        + "/drawable/" + getResources().getResourceName(imageId).substring(36,getResources().getResourceName(imageId).length()));
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                shareIntent.setType("image/jpeg");
+                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                startActivity(Intent.createChooser(shareIntent, "send"));
+            }
+        });
 
 
     }
